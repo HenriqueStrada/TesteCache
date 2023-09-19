@@ -11,18 +11,16 @@ public class TesteCacheController {
     private final TesteCacheService testeCacheService;
 
     @Autowired
-    public TesteCacheController(TesteCacheController testeCacheService){
+    public TesteCacheController(TesteCacheService testeCacheService){
         this.testeCacheService = testeCacheService;
     }
 
-    @GetMapping("/getCacheValor"){
-        public String getCacheValor(@RequestParam String key){
-            return testeCacheService.getValor(key);
+    @GetMapping("/getCacheValor")
+        public String getCacheValor(@RequestParam String valor){
+            return testeCacheService.getValor(valor);
         }
-    }
-    @PostMapping("/limparCache"){
-        public void clearCache();
-    }
+    @PostMapping("/limparCache")
+        public void clearCache(){
 
-
+    }
 }
