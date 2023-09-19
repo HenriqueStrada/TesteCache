@@ -6,14 +6,13 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class TesteCacheService {
+
     @Cacheable(value = "teste", key = "#key")
     public String getValor(String valor){
         return "Retorno é: " + valor;
     }
-
     @CacheEvict(value = "teste", allEntries = true)
-    public void limparCache(){
+    public void limpaCache(){
 
     }
-
 }
